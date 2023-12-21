@@ -1,0 +1,196 @@
+.upload-image {
+  align-items: center;
+  background-color: #f5f5f5;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.upload-image .frame {
+  align-items: flex-start;
+  background: linear-gradient(
+    180deg,
+    rgb(140, 82, 255) 0%,
+    rgba(140, 82, 255, 0.59) 40.62%,
+    rgba(140, 82, 255, 0.47) 53.12%,
+    rgba(140, 82, 255, 0.19) 81.45%,
+    rgba(140, 82, 255, 0) 100%,
+    rgba(140, 82, 255, 0.72) 100%
+  );
+  display: flex;
+  gap: 10px;
+  height: 1116px;
+  padding: 10px;
+  position: relative;
+  width: 303px;
+}
+
+.upload-image .div {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 29px;
+  margin-right: -10px;
+  padding: 30px 35px;
+  position: relative;
+}
+
+.upload-image .depositphotos {
+  height: 218px;
+  object-fit: cover;
+  position: relative;
+  width: 223px;
+}
+
+.upload-image .div-wrapper {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  height: 68px;
+  padding: 16px 32px;
+  position: relative;
+  width: 138px;
+}
+
+.upload-image .text-wrapper {
+  color: #f5f5f5;
+  font-family: "Inter", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: -2px;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.upload-image .frame-wrapper {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  gap: 8px;
+  justify-content: center;
+  position: relative;
+}
+
+.upload-image .frame-2 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 835px;
+  padding: 44px 15px;
+  position: relative;
+  width: 772px;
+}
+
+.upload-image .p {
+  align-self: stretch;
+  color: #020005;
+  font-family: "Inter", Helvetica;
+  font-size: 52px;
+  font-weight: 600;
+  height: 114px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.upload-image .frame-3 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 32px;
+  position: relative;
+  width: 100%;
+}
+
+.upload-image .frame-4 {
+  align-items: center;
+  align-self: stretch;
+  background-color: #f0e9ff;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.upload-image .frame-5 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  height: 355px;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+  width: 772px;
+}
+
+.upload-image .rectangle {
+  height: 239px;
+  object-fit: cover;
+  position: relative;
+  width: 280px;
+}
+
+.upload-image .text-wrapper-2 {
+  align-self: stretch;
+  color: #a91b60;
+  flex: 1;
+  font-family: "Inter", Helvetica;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+}
+
+.upload-image .frame-6 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 65px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.upload-image .frame-7 {
+  align-items: center;
+  background-color: #8c52ff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 67px;
+  justify-content: center;
+  position: relative;
+  width: 261px;
+}
+
+.upload-image .text-wrapper-3 {
+  color: #f5f5f5;
+  font-family: "Inter", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
