@@ -1,4 +1,6 @@
+// UploadImg.js
 import React from 'react';
+import ImageUpload from './ImageUpload'; // Adjust the path based on your project structure
 import '../css/uploadImg.css';
 
 export default function UploadImg() {
@@ -20,23 +22,14 @@ export default function UploadImg() {
         <div className="frame-2">
           <p className="p">Upload Image to get Caption</p>
           <div className="frame-3">
-            <div className="frame-4">
-              <div className="frame-5">
-                <img
-                  className="rectangle"
-                  alt="Rectangle"
-                  src="https://c.animaapp.com/TpyzO73n/img/rectangle-5@2x.png"
-                />
-                <div className="text-wrapper-2">Choose Image</div>
-              </div>
+            <ImageUpload /> {/* Replace the "Choose Image" button with ImageUpload component */}
+          </div>
+          <div className="frame-6">
+            <div className="frame-7">
+              <div className="text-wrapper-3">Upload</div>
             </div>
-            <div className="frame-6">
-              <div className="frame-7">
-                <div className="text-wrapper-3">Upload</div>
-              </div>
-              <div className="frame-7">
-                <div className="text-wrapper-3">Analyze</div>
-              </div>
+            <div className="frame-7">
+              <div className="text-wrapper-3">Analyze</div>
             </div>
           </div>
         </div>
