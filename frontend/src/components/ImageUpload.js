@@ -10,16 +10,30 @@ const ImageUpload = () => {
   };
 
   const handleUpload = async () => {
-    const formData = new FormData();
-    formData.append('image', selectedFile);
+    if (!selectedFile) {
+      console.error('No image selected');
+      return;
+    }
+
+    console.log(selectedFile);
+    console.log(selectedFile.name);
+    // Get the entire file path
+    const filePath = selectedFile.webkitRelativePath || selectedFile.name;
+
+    console.log(typeof filePath);
 
     try {
-      // Make a POST request to the server
-      const response = await axios.post('http://localhost:3001/upload', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data', // Important for file uploads
-        },
-      });
+      // Make a POST request to the server with the file path
+      const response = await axios.post(
+        'https://localhost:3001/upload',
+        { filePath },
+        {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
       // Handle the response as needed
       console.log('Server response:', response.data);

@@ -22,7 +22,8 @@ export default function UploadImg() {
         <div className="frame-2">
           <p className="p">Upload Image to get Caption</p>
           <div className="frame-3">
-            <ImageUpload /> {/* Replace the "Choose Image" button with ImageUpload component */}
+            <ImageUpload />{' '}
+            {/* Replace the "Choose Image" button with ImageUpload component */}
           </div>
           <div className="frame-6">
             <div className="frame-7">
