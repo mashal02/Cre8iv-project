@@ -3,30 +3,38 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const ImageUpload = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleFileChange = (e) => {
-    setSelectedFile(e.target.files[0]);
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    console.log(file);
+    const reader = new FileReader();
+    const type = file.type;
+
+    console.log(type);
+
+    reader.onloadend = () => {
+      const res = reader.result;
+      setSelectedImage({ data: res });
+    };
+
+    reader.readAsDataURL(file);
+    console.log(reader);
   };
 
   const handleUpload = async () => {
-    if (!selectedFile) {
+    console.log('hello');
+    console.log(selectedImage);
+    if (!selectedImage) {
       console.error('No image selected');
       return;
     }
 
-    console.log(selectedFile);
-    console.log(selectedFile.name);
-    // Get the entire file path
-    const filePath = selectedFile.webkitRelativePath || selectedFile.name;
-
-    console.log(typeof filePath);
-
     try {
-      // Make a POST request to the server with the file path
+      // Make a POST request to the server with the image data and path
       const response = await axios.post(
-        'https://localhost:3001/upload',
-        { filePath },
+        'https://localhost:3001/send-message',
+        { image: selectedImage },
         {
           withCredentials: true,
           headers: {
@@ -44,7 +52,7 @@ const ImageUpload = () => {
 
   return (
     <div>
-      <input type="file" onChange={handleFileChange} />
+      <input type="file" onChange={handleImageChange} />
       <button onClick={handleUpload}>Upload</button>
     </div>
   );
