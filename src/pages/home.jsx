@@ -1,14 +1,15 @@
 import React from "react";
-import { BrandFacebook1 } from "../public/icons/BrandFacebook1";
-import { BrandInstagram1 } from "../public/icons/BrandInstagram1";
-import { BrandLinkedin1 } from "../public/icons/BrandLinkedin1";
-import { BrandMessenger1 } from "../public/icons/BrandMessenger1";
-import { BrandTwitter1 } from "../public/icons/BrandTwitter1";
-import { BrandYoutube1 } from "../public/icons/BrandYoutube1";
-import { IconlyLightSend } from "../public/icons/IconlyLightSend";
+import Login from "./login"
+import { BrandFacebook1 } from "../resources/icons/BrandFacebook1";
+import { BrandInstagram1 } from "../resources/icons/BrandInstagram1";
+import { BrandLinkedin1 } from "../resources/icons/BrandLinkedin1";
+import { BrandMessenger1 } from "../resources/icons/BrandMessenger1";
+import { BrandTwitter1 } from "../resources/icons/BrandTwitter1";
+import { BrandYoutube1 } from "../resources/icons/BrandYoutube1";
+import { IconlyLightSend } from "../resources/icons/IconlyLightSend";
 import "../css/home.css";
 
-export const home = () => {
+export const Home = () => {
   return (
     <div className="index">
       <div className="div">
@@ -105,7 +106,7 @@ export const home = () => {
                       <div className="item-margin">
                         <div className="link-wrapper">
                           <div className="login-wrapper">
-                            <div className="login"> Login</div>
+                            <div className="login" ><a href= '/login'>Login </a> </div>
                           </div>
                         </div>
                       </div>
@@ -781,4 +782,5 @@ export const home = () => {
     </div>
   );
 };
-export { home } from "./home";
+
+export default Home;

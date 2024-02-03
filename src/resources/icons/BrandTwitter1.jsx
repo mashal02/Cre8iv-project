@@ -23,4 +23,4 @@ export const BrandTwitter1 = ({ className }) => {
     </svg>
   );
 };
-export { BrandTwitter1 } from "./BrandTwitter1";
+export default BrandTwitter1 ;

@@ -32,4 +32,4 @@ IconlyLightSend.propTypes = {
   color: PropTypes.string,
 };
 
-export { IconlyLightSend } from "./IconlyLightSend";
+export default IconlyLightSend ;

@@ -540,7 +540,8 @@
     position: relative;
   }
   
-  .index .login {
+  .index .login a{
+    cursor: pointer;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 0;
     color: #8c52ff;
@@ -556,6 +557,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     width: fit-content;
+    text-decoration: none;
   }
   
   .index .item-2 {

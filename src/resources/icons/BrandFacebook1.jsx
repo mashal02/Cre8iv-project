@@ -18,4 +18,4 @@ export const BrandFacebook1 = ({ className }) => {
     </svg>
   );
 };
-export { BrandFacebook1 } from "./BrandFacebook1";
+export default BrandFacebook1;  

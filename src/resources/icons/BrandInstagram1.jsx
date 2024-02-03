@@ -23,4 +23,4 @@ export const BrandInstagram1 = ({ className }) => {
     </svg>
   );
 };
-export { BrandInstagram1 } from "./BrandInstagram1";
+export default BrandInstagram1 ;

@@ -25,4 +25,4 @@ export const BrandLinkedin1 = ({ className }) => {
 };
 
 
-export { BrandLinkedin1 } from "./BrandLinkedin1";
+export  default BrandLinkedin1 ;

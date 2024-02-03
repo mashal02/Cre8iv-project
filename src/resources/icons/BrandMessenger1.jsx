@@ -23,4 +23,4 @@ export const BrandMessenger1 = ({ className }) => {
     </svg>
   );
 };
-export { BrandMessenger1 } from "./BrandMessenger1";
+export default BrandMessenger1;

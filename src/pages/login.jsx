@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/login.css';
-
-export default function Login() {
+export const Login = () => {
   return (
     <div className="login-page">
       <img
@@ -29,4 +28,5 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+export default Login;

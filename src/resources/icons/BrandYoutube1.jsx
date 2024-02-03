@@ -23,4 +23,4 @@ export const BrandYoutube1 = ({ className }) => {
     </svg>
   );
 };
-export { BrandYoutube1 } from "./BrandYoutube1";
+export default BrandYoutube1 ;
