@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/login.css';
+import {FacebookLoginComponent} from '../components/salehfbloginfrontend'
 export const Login = () => {
   return (
     <div className="login-page">
@@ -18,7 +19,7 @@ export const Login = () => {
       </div>
       <div className="next-wrapper">
         <div className="next">
-          <div className="text-wrapper">Sign in with Instagram</div>
+          <div className="text-wrapper">Sign in with Instagram <FacebookLoginComponent/></div>
           <img
             className="eva-arrow-ios"
             alt="Eva arrow ios"

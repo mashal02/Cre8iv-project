@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDialog } from 'your-dialog-library'; // Import your dialog library
 import { MessagePopupComponent } from 'your-message-popup-library'; // Import your message popup library
 import SelectPagePopupComponent from 'your-select-page-popup-library'; // Import your select page popup library
-import { getFacebookLoginUrl, getFbToken, getUserFbPages } from 'latestfbloginserver'; // Import your API service functions
+//import { getFacebookLoginUrl, getFbToken, getUserFbPages } from 'latestfbloginserver'; // Import your API service functions
 
 const FacebookLoginComponent = () => {
   const [code, setCode] = useState('');
