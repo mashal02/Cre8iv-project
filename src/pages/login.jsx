@@ -1,7 +1,8 @@
 import React from 'react';
 import '../css/login.css';
-import {FacebookLoginComponent} from '../components/salehfbloginfrontend'
+import FacebookLoginComponent from '../components/salehfbloginfrontend'
 export const Login = () => {
+  const facebookcon = FacebookLoginComponent();
   return (
     <div className="login-page">
       <img
@@ -19,7 +20,8 @@ export const Login = () => {
       </div>
       <div className="next-wrapper">
         <div className="next">
-          <div className="text-wrapper">Sign in with Instagram <FacebookLoginComponent/></div>
+
+          <button className="text-wrapper" onClick={() => facebookcon()} >Sign in with Instagram </button>
           <img
             className="eva-arrow-ios"
             alt="Eva arrow ios"

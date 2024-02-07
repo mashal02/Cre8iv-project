@@ -1,15 +1,15 @@
 // React Component
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDialog } from 'your-dialog-library'; // Import your dialog library
-import { MessagePopupComponent } from 'your-message-popup-library'; // Import your message popup library
-import SelectPagePopupComponent from 'your-select-page-popup-library'; // Import your select page popup library
+//import { useDialog } from 'your-dialog-library'; // Import your dialog library
+//import { MessagePopupComponent } from 'your-message-popup-library'; // Import your message popup library
+//import SelectPagePopupComponent from 'your-select-page-popup-library'; // Import your select page popup library
 //import { getFacebookLoginUrl, getFbToken, getUserFbPages } from 'latestfbloginserver'; // Import your API service functions
 
 const FacebookLoginComponent = () => {
   const [code, setCode] = useState('');
   const history = useNavigate();
-  const dialog = useDialog(); // Replace with your actual dialog hook
+ // const dialog = useDialog(); // Replace with your actual dialog hook
 
   const showError = (message) => {
     // Implement your error handling logic (e.g., show an error message)
@@ -41,11 +41,13 @@ const FacebookLoginComponent = () => {
         return;
       }
 
-      const pageObj = await dialog.open(SelectPagePopupComponent, {
+     /*  const pageObj = await dialog.open(SelectPagePopupComponent, {
         width: '600px',
         data: fbPages.data,
-      });
-
+      }
+      
+      );
+ */
       if (!pageObj) {
         showError('Connect to Facebook failed.');
         return;
@@ -62,11 +64,11 @@ const FacebookLoginComponent = () => {
         accountId: actId,
       });
 
-      await dialog.open(MessagePopupComponent, {
+      /* await dialog.open(MessagePopupComponent, {
         width: '600px',
         data: `Your Facebook page "${pageObj.name}" has been connected.`,
       });
-
+ */
       localStorage.removeItem('seletedAlertId');
       history.push('/');
     } catch (error) {
@@ -75,14 +77,10 @@ const FacebookLoginComponent = () => {
   };
 
   // You can define the missing utility functions (e.g., disconnectSocialAccount, addFbPageDetailsToAlert) here.
-
-  return (
-    <div>
-      <h1>Facebook Login Example</h1>
-      {/* Render your UI elements here */}
-      <button onClick={() => connectFacebook(/* pass alert object */)}>Login with Facebook</button>
-    </div>
-  );
+   return connectFacebook;
+ 
+  
+  
 };
 
 export default FacebookLoginComponent;
