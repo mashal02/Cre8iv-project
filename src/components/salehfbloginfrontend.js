@@ -1,16 +1,40 @@
 // React Component
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useEffect} from 'react';
 //import { useDialog } from 'your-dialog-library'; // Import your dialog library
 //import { MessagePopupComponent } from 'your-message-popup-library'; // Import your message popup library
 //import SelectPagePopupComponent from 'your-select-page-popup-library'; // Import your select page popup library
-import { getFacebookLoginUrl} from '../api/facebooklogin/index'; // Import your API service functions
+import { fetchfblogin} from '../api/facebooklogin/index'; // Import your API service functions
+//import { fetchDataFromBackend } from 'yourBackendApi'; // Replace with your actual backend API function
+
 
 const FacebookLoginComponent = () => {
   const [code, setCode] = useState('');
-  
   const history = useNavigate();
- // const dialog = useDialog(); // Replace with your actual dialog hook
+
+  const fetchData = async () => {
+    try {
+      const response = await fetchfblogin({
+        callback: (data) => {
+          console.log('Data from backend:', data);
+  
+          // Access authUrl from data (assuming the backend sends it in the response)
+          const authUrl = data.url;
+          console.log('Authentication URL:', authUrl);
+  
+          // Your logic with the authUrl goes here
+        },
+      });
+    } catch (error) {
+      console.error('Error fetching data from backend:', error);
+    }
+  };
+  
+  useEffect(() => {
+    // Call the fetchData function when the component mounts
+    fetchData();
+  }, []); // Empty dependencies array means it runs once after the initial render
 
   const showError = (message) => {
     // Implement your error handling logic (e.g., show an error message)
@@ -23,16 +47,18 @@ const FacebookLoginComponent = () => {
         // Disconnect social account logic here
         // ...
       } else {
-        const response = await getFacebookLoginUrl();
+        // Call fetchData when connecting Facebook
+        fetchData();
         localStorage.setItem('seletedAlertId', alert._id);
-        window.location.href = response.url;
+        // window.location.href = response.url;
       }
     } catch (error) {
       showError(error);
     }
   };
 
-  const processFbLogin = async () => {
+
+/*   const processFbLogin = async () => {
     try {
       const resp = await getFbToken(code);
       const fbPages = await getUserFbPages(resp.data.access_token);
@@ -42,13 +68,13 @@ const FacebookLoginComponent = () => {
         return;
       }
 
-     /*  const pageObj = await dialog.open(SelectPagePopupComponent, {
+      const pageObj = await dialog.open(SelectPagePopupComponent, {
         width: '600px',
         data: fbPages.data,
       }
       
       );
- */
+
       if (!pageObj) {
         showError('Connect to Facebook failed.');
         return;
@@ -65,11 +91,11 @@ const FacebookLoginComponent = () => {
         accountId: actId,
       });
 
-      /* await dialog.open(MessagePopupComponent, {
+      await dialog.open(MessagePopupComponent, {
         width: '600px',
         data: `Your Facebook page "${pageObj.name}" has been connected.`,
       });
- */
+
       localStorage.removeItem('seletedAlertId');
       history.push('/');
     } catch (error) {
@@ -77,7 +103,7 @@ const FacebookLoginComponent = () => {
     }
   };
 
-  // You can define the missing utility functions (e.g., disconnectSocialAccount, addFbPageDetailsToAlert) here.
+ */  // You can define the missing utility functions (e.g., disconnectSocialAccount, addFbPageDetailsToAlert) here.
    return connectFacebook;
  
   

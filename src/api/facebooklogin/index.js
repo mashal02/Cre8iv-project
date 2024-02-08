@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {apiWrapper} from '../../api/wrapper'
+export const fetchfblogin = ({callback}) => (
+
+apiWrapper({
+  endpoint: 'fblogin',
+  method: 'get',
+  callback,
+
+})
+
+);
+
 
 /* const getFacebookLoginUrl = async () => {
     try {
@@ -18,4 +30,5 @@ import axios from 'axios';
     
   }; */
 
-  export default getFacebookLoginUrl;
+
+
