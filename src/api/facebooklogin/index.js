@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const getFacebookLoginUrl = async () => {
+/* const getFacebookLoginUrl = async () => {
     try {
       const response = await axios.get(
         'https://localhost:3001/',
@@ -16,6 +16,6 @@ const getFacebookLoginUrl = async () => {
     }
 
     
-  };
+  }; */
 
   export default getFacebookLoginUrl;

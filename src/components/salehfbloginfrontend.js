@@ -8,6 +8,7 @@ import { getFacebookLoginUrl} from '../api/facebooklogin/index'; // Import your 
 
 const FacebookLoginComponent = () => {
   const [code, setCode] = useState('');
+  
   const history = useNavigate();
  // const dialog = useDialog(); // Replace with your actual dialog hook
 
