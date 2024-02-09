@@ -8,18 +8,15 @@ import './css/App.css';
 //import Login from './components/login2';
 //import Callback from './components/callback';
 //import FBLogin from './components/facebooklogin';
-import Login from './pages/login'
-import FacebookLogin from './components/latestfblogin';
-import Callback from './components/callback';
+import Login from './pages/login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact element={<Home/>} />
-        <Route path="/login" exact element={<Login/>} />
-        
+        <Route path="/" exact element={<Home />} />
+        <Route path="/login" exact element={<Login />} />
       </Routes>
     </Router>
   );

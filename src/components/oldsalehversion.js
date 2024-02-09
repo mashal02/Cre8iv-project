@@ -22,6 +22,9 @@ const FacebookLoginComponent = () => {
           const authUrl = data.data.url;
           console.log('Authentication URL:', authUrl);
 
+          // Open the URL in a new tab
+          window.open(authUrl, '_blank');
+
           // Your logic with the authUrl goes here
         },
       });
