@@ -25,12 +25,11 @@ export const apiWrapper = async ({
   method = '',
 }) => {
   try {
-    const url = `https://localhost:3001/${endpoint}`;
+    const url = `https://192.168.56.1:3001/${endpoint}`;
     console.log(url);
     const response = await axios({
       method,
-
-      url ,
+      url,
       data: postData,
       params: queryParams,
       headers,
@@ -39,8 +38,10 @@ export const apiWrapper = async ({
       },
     });
     if (response.status !== 200) {
-        const error = new Error(`Api call to path '${endpoint}' failed with ${response.status}.`);  // Corrected error message template string
-        error.response = response;
+      const error = new Error(
+        `Api call to path '${endpoint}' failed with ${response.status}.`
+      ); // Corrected error message template string
+      error.response = response;
       throw error;
     }
     callback && callback(response);

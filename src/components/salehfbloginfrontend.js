@@ -1,13 +1,13 @@
 // React Component
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 //import { useDialog } from 'your-dialog-library'; // Import your dialog library
 //import { MessagePopupComponent } from 'your-message-popup-library'; // Import your message popup library
 //import SelectPagePopupComponent from 'your-select-page-popup-library'; // Import your select page popup library
 //import { fetchfblogin} from '../api/facebooklogin/index'; // Import your API service functions
 //import { fetchDataFromBackend } from 'yourBackendApi'; // Replace with your actual backend API function
-import axios from "axios"
+import axios from 'axios';
 
 function connectFacebook() {
   const [code, setCode] = useState('');
@@ -16,27 +16,26 @@ function connectFacebook() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://localhost:3001/fblogin");
-        console.log("UseEffect Hook Called ~ res", response.data);
+        const response = await axios.get('https://localhost:3001/fblogin');
+        console.log('UseEffect Hook Called ~ res', response.data);
         // Add your logic here based on the response
-      } 
-      catch (error) {
+      } catch (error) {
         showError(error);
       }
     };
 
     fetchData();
   }, []); // Empty dependency array means this effect runs once on mount
+}
+// Other logic for ConnectFacebook component
+
+// Example of using history.push for navigation
+// history.push("/your-route");
+
+const showError = (error) => {
+  // Handle and display the error
+  console.error('Error:', error);
 };
-  // Other logic for ConnectFacebook component
-
-  // Example of using history.push for navigation
-  // history.push("/your-route");
-
-  const showError = (error) => {
-    // Handle and display the error
-    console.error("Error:", error);
-  };
 
 /*   const processFbLogin = async () => {
     try {
@@ -83,11 +82,6 @@ function connectFacebook() {
     }
   };
 
- */  // You can define the missing utility functions (e.g., disconnectSocialAccount, addFbPageDetailsToAlert) here.
-  
- 
-  
-  
-
+ */ // You can define the missing utility functions (e.g., disconnectSocialAccount, addFbPageDetailsToAlert) here.
 
 export default connectFacebook;
