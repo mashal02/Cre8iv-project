@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/login.css';
-import FacebookLoginComponent from '../components/salehfbloginfrontend'
+import FacebookLoginComponent from '../components/oldsalehversion';
+//import connectFacebook from '../components/salehfbloginfrontend'
 export const Login = () => {
   const facebookcon = FacebookLoginComponent();
   return (

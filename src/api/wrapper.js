@@ -22,12 +22,15 @@ export const apiWrapper = async ({
   headers,
   callback = () => undefined,
   queryParams = {},
-  method = 'post',
+  method = '',
 }) => {
   try {
+    const url = `https://localhost:3001/${endpoint}`;
+    console.log(url);
     const response = await axios({
       method,
-      url: 'https://localhost:3001/${endpoint}',
+
+      url ,
       data: postData,
       params: queryParams,
       headers,
