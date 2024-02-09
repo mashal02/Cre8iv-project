@@ -8,7 +8,7 @@ import './css/App.css';
 //import Login from './components/login2';
 //import Callback from './components/callback';
 //import FBLogin from './components/facebooklogin';
-import Login from './pages/login';
+import FacebookLoginComponent from './pages/fblogin';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 function App() {
@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/login" exact element={<Login />} />
+        <Route path="/login" exact element={<FacebookLoginComponent />} />
       </Routes>
     </Router>
   );
