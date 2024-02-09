@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
+import ReactDOM from 'react-dom';
+import FacebookLogin from 'react-facebook-login';
+ 
 const FacebookLoginComponent = () => {
   const [status, setStatus] = useState('');
 
@@ -14,7 +16,11 @@ const FacebookLoginComponent = () => {
     }
   };
 
+  //Check User Logging In Status 
   const checkLoginState = () => {
+    console.log("InsideCheckLoginStatus Ftn");
+    console.log(response);
+
     window.FB.getLoginStatus((response) => {
       statusChangeCallback(response);
     });
@@ -29,11 +35,13 @@ const FacebookLoginComponent = () => {
   };
 
   useEffect(() => {
+   
     window.fbAsyncInit = function () {
       window.FB.init({
         appId: '1303786660331996',
         cookie: true,
         xfbml: true,
+        //autoload: true,
         version: 'v18.0',
       });
 
@@ -53,17 +61,25 @@ const FacebookLoginComponent = () => {
       fjs.parentNode.insertBefore(js, fjs);
     })(document, 'script', 'facebook-jssdk');
   }, []);
-
+  
+  const responseFacebook = (response) => {
+    console.log(response);
+    if (response.status === 'connected') {
+      checkLoginState();
+    }
+  };
   return (
     <div>
-      {/* The JS SDK Login Button */}
-      <div
-        className="fb-login-button"
-        data-config="810365901107808"
-        data-onlogin="checkLoginState();"
-      ></div>
-
-      <div id="status">{status}</div>
+      <div id="status"></div>
+      <FacebookLogin
+        appId="1303786660331996"
+        autoLoad={false}
+        fields="name,email,picture"
+        callback={responseFacebook}
+        render={renderProps => (
+          <button onClick={renderProps.onClick}>Login with Facebook</button>
+        )}
+      />
     </div>
   );
 };
