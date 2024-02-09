@@ -40,22 +40,12 @@ const FacebookLoginComponent = () => {
     console.error('Error:', message);
   };
 
-  const connectFacebook = async (alert) => {
+  const connectFacebook = async () => {
     try {
-      if (
-        alert &&
-        alert.socialCare &&
-        alert.socialCare.facebook &&
-        alert.socialCare.facebook.pageId
-      ) {
-        // Disconnect social account logic here
-        // ...
-      } else {
-        // Call fetchData when connecting Facebook
-        fetchData();
-        localStorage.setItem('seletedAlertId', alert._id);
-        // window.location.href = response.url;
-      }
+      // Call fetchData when connecting Facebook
+      fetchData();
+      //localStorage.setItem('seletedAlertId', alert._id);
+      // window.location.href = response.url;
     } catch (error) {
       showError(error);
     }
