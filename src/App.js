@@ -8,7 +8,7 @@ import './css/App.css';
 //import Login from './components/login2';
 //import Callback from './components/callback';
 //import FBLogin from './components/facebooklogin';
-import FacebookLoginComponent from './pages/fblogin';
+import FacebookLoginComponent from './pages/login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 function App() {

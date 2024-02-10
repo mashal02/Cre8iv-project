@@ -16,12 +16,12 @@ export const fetchfbaccesstoken = ({ callback }) =>
     callback,
   });
 
-export const fetchfbpages = ({ callback }) =>
-  apiWrapper({
-    endpoint: 'fbpages',
-    method: 'get',
-    callback,
-  });
+// export const fetchfbpages = ({ callback }) =>
+//   apiWrapper({
+//     endpoint: 'fbpages',
+//     method: 'get',
+//     callback,
+//   });
 
 /* const getFacebookLoginUrl = async () => {
     try {
