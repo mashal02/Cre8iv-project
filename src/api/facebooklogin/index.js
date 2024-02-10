@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {apiWrapper} from '../../api/wrapper'
-export const fetchfblogin = ({callback}) => (
+import { apiWrapper } from '../../api/wrapper';
 
-apiWrapper({
-  endpoint: 'fblogin',
-  method: 'get',
-  callback,
+export const fetchfblogin = ({ callback }) =>
+  apiWrapper({
+    endpoint: 'fblogin',
+    method: 'get',
+    callback,
+  });
 
-})
+export const fetchfbaccesstoken = ({ callback }) =>
+  apiWrapper({
+    endpoint: 'fbtoken',
+    method: 'get',
+    callback,
+  });
 
-);
-
+export const fetchfbpages = ({ callback }) =>
+  apiWrapper({
+    endpoint: 'fbpages',
+    method: 'get',
+    callback,
+  });
 
 /* const getFacebookLoginUrl = async () => {
     try {
@@ -29,5 +39,3 @@ apiWrapper({
 
     
   }; */
-
-

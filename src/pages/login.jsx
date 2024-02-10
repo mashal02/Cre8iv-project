@@ -4,6 +4,7 @@ import FacebookLoginComponent from '../components/oldsalehversion';
 //import connectFacebook from '../components/salehfbloginfrontend'
 export const Login = () => {
   const facebookcon = FacebookLoginComponent();
+  
   return (
     <div className="login-page">
       <img

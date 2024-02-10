@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 //import { useDialog } from 'your-dialog-library'; // Import your dialog library
 //import { MessagePopupComponent } from 'your-message-popup-library'; // Import your message popup library
 //import SelectPagePopupComponent from 'your-select-page-popup-library'; // Import your select page popup library
-import { fetchfblogin } from '../api/facebooklogin/index'; // Import your API service functions
+import { fetchfbaccesstoken, fetchfblogin } from '../api/facebooklogin/index'; // Import your API service functions
 //import { fetchDataFromBackend } from 'yourBackendApi'; // Replace with your actual backend API function
 
 const FacebookLoginComponent = () => {
@@ -15,11 +15,11 @@ const FacebookLoginComponent = () => {
   const fetchData = async () => {
     try {
       const response = await fetchfblogin({
-        callback: (data) => {
-          console.log('Data from backend:', data);
+        callback: (mainDataObj) => {
+          console.log('Data from backend:', mainDataObj);
 
           // Access authUrl from data (assuming the backend sends it in the response)
-          const authUrl = data.data.url;
+          const authUrl = mainDataObj.data.url;
           console.log('Authentication URL:', authUrl);
 
           // Open the URL in a new tab
@@ -54,10 +54,35 @@ const FacebookLoginComponent = () => {
     }
   };
 
-  /*   const processFbLogin = async () => {
+  const processFbLogin = async () => {
     try {
-      const resp = await getFbToken(code);
-      const fbPages = await getUserFbPages(resp.data.access_token);
+      const response = await fetchfbaccesstoken({
+        callback: (fbRes1) => {
+          console.log('Data from backend:', fbRes1);
+
+          // Access authUrl from data (assuming the backend sends it in the response)
+          //const code = fbRes1.data.code;
+          //console.log('Authentication URL:', code);
+
+          //return code;
+        },
+      });
+    } catch (error) {
+      showError(error);
+    }
+  };
+
+  //const resp = await getFbToken(code);
+
+  const processFbpages = async () => {
+    try {
+      const fbPages = await fetchfbpages({
+        callback: () => {
+          console.log('Data from backend:');
+        },
+      });
+
+      //const fbPages = await getUserFbPages(resp.data.access_token);
 
       if (!fbPages || !fbPages.data || !fbPages.data.length) {
         showError('No Facebook page found.');
@@ -67,9 +92,7 @@ const FacebookLoginComponent = () => {
       const pageObj = await dialog.open(SelectPagePopupComponent, {
         width: '600px',
         data: fbPages.data,
-      }
-      
-      );
+      });
 
       if (!pageObj) {
         showError('Connect to Facebook failed.');
@@ -99,7 +122,7 @@ const FacebookLoginComponent = () => {
     }
   };
 
- */ // You can define the missing utility functions (e.g., disconnectSocialAccount, addFbPageDetailsToAlert) here.
+  // You can define the missing utility functions (e.g., disconnectSocialAccount, addFbPageDetailsToAlert) here.
   return connectFacebook;
 };
 

@@ -38,7 +38,8 @@ const FacebookLoginComponent = () => {
    
     window.fbAsyncInit = function () {
       window.FB.init({
-        appId: '1303786660331996',
+        //appId: '1303786660331996',
+        appId: '1073961894040764',
         cookie: true,
         xfbml: true,
         //autoload: true,
@@ -72,12 +73,13 @@ const FacebookLoginComponent = () => {
     <div>
       <div id="status"></div>
       <FacebookLogin
-        appId="1303786660331996"
+        //appId="1303786660331996"
+        appId= "1073961894040764"
         autoLoad={false}
         fields="name,email,picture"
         callback={responseFacebook}
         render={renderProps => (
-          <button onClick={renderProps.onClick}>Login with Facebook</button>
+          <button onClick={renderProps.onClick}>Login with Facebook </button>
         )}
       />
     </div>
