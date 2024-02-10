@@ -25,8 +25,8 @@ export const apiWrapper = async ({
   method = '',
 }) => {
   try {
-    //const url = `https://192.168.1.28:3001/${endpoint}`;
-    const url = `https://192.168.56.1:3001/${endpoint}`;
+    const url = `https://192.168.1.28:3001/${endpoint}`;
+    //const url = `https://192.168.56.1:3001/${endpoint}`;
     console.log(url);
     const response = await axios({
       method,
