@@ -28,7 +28,7 @@ const FacebookLoginComponent = () => {
 
           // Open the URL in a new tab
           window.open(authUrl, '_blank');
-         
+
           // Your logic with the authUrl goes here
         },
       });
@@ -36,7 +36,7 @@ const FacebookLoginComponent = () => {
       console.error('Error fetching data from backend:', error);
     }
 
-    console.log("Hello is this Function Ended Here??");
+    console.log('Hello is this Function Ended Here??');
   };
 
   // useEffect(() => {
@@ -51,10 +51,14 @@ const FacebookLoginComponent = () => {
 
   const processFbLogin = async () => {
     try {
-    const queryParams = new URLSearchParams(window.location.search);
-    const code = queryParams.get('code');
       const response = await fetchfbaccesstoken({
         callback: (fbRes1) => {
+          const queryParams = new URLSearchParams(window.location.search);
+          console.log('Query Params:', queryParams);
+
+          const code = queryParams.get(fbRes1.code);
+          console.log('Code', code);
+
           console.log('Data from Process Fb Login (Code):', fbRes1);
 
           // Access code from data (assuming the backend sends it in the response)
@@ -73,17 +77,19 @@ const FacebookLoginComponent = () => {
     try {
       // Call fetchData when connecting Facebook
       await fetchData();
+      await processFbLogin();
 
+      // flow theek krna
       //Status Wali Cheez Dekhni hai Humnay
-       //Also Check Await & Aysync
-       //Use Effect wali Hook ko Explore Krna hai
-      if (codeStatus == '200') {
-        console.log("Hello are you Here in this IF Statement ");
-         await processFbLogin();
-      }
-      else{
-        console.log("Hello are you Here in this ELSE Statement");
-      }
+      //Also Check Await & Async
+      //UseEffect wali Hook ko Explore Krna hai
+
+      // if (codeStatus == '200') {
+      //   console.log('Hello are you Here in this IF Statement ');
+      //   await processFbLogin();
+      // } else {
+      //   console.log('Hello are you Here in this ELSE Statement');
+      // }
       //localStorage.setItem('seletedAlertId', alert._id);
       // window.location.href = response.url;
     } catch (error) {
