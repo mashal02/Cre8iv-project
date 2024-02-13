@@ -49,25 +49,14 @@ const FacebookLoginComponent = () => {
     console.error('Error:', message);
   };
 
-  const processFbLogin = async () => {
+  const processFbLogin = async (code) => {
     try {
-      const response = await fetchfbaccesstoken({
-        callback: (fbRes1) => {
-          const queryParams = new URLSearchParams(window.location.search);
-          console.log('Query Params:', queryParams);
-
-          const code = queryParams.get(fbRes1.code);
-          console.log('Code', code);
-
-          console.log('Data from Process Fb Login (Code):', fbRes1);
-
-          // Access code from data (assuming the backend sends it in the response)
-          //const code = fbRes1.data.code;
-          console.log('Request Body Code:', code);
-
-          //return code;
+      const response = await fetchfbaccesstoken(
+        (fbRes1) => {
+          console.log('Response:', response);
         },
-      });
+        { code }
+      );
     } catch (error) {
       showError(error);
     }
@@ -77,7 +66,7 @@ const FacebookLoginComponent = () => {
     try {
       // Call fetchData when connecting Facebook
       await fetchData();
-      await processFbLogin();
+      //await processFbLogin();
 
       // flow theek krna
       //Status Wali Cheez Dekhni hai Humnay
@@ -151,4 +140,5 @@ const FacebookLoginComponent = () => {
   return connectFacebook;
 };
 
-export default FacebookLoginComponent;
+//export default FacebookLoginComponent;
+export default { FacebookLoginComponent, processFbLogin };

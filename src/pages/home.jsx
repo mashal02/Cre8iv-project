@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "./login"
+import { useEffect } from "react";
 import { BrandFacebook1 } from "../resources/icons/BrandFacebook1";
 import { BrandInstagram1 } from "../resources/icons/BrandInstagram1";
 import { BrandLinkedin1 } from "../resources/icons/BrandLinkedin1";
@@ -8,10 +9,40 @@ import { BrandTwitter1 } from "../resources/icons/BrandTwitter1";
 import { BrandYoutube1 } from "../resources/icons/BrandYoutube1";
 import { IconlyLightSend } from "../resources/icons/IconlyLightSend";
 import "../css/home.css";
+import { useNavigate } from "react-router-dom";
+import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+//import {Landpage} from "../components/landpage"
+import {processFbLogin} from "../components/oldsalehversion"
 
 export const Home = () => {
+  //const params = useParams();
+  //const productId = params.code;
+  const search = useLocation().search;
+  const code = new URLSearchParams(search).get('code');
+
+  function codevalue(code) {
+    console.log(code);
+  }
+  useEffect(() => {
+    console.log("Inside Home", [])
+    codevalue(code);
+   
+    
+  },[]);
+
+  processFbLogin(code);
+  
+ 
+
+  //return <div><h1>Cart Screen</h1> 
+  // <p>Product: {productId}, Qty: { qty}</p></div>;
+ 
+
   return (
+    
     <div className="index">
+    
       <div className="div">
         <div className="overlap">
           <div className="desktop">
