@@ -1,10 +1,8 @@
-import React from 'react';
-import '../css/login.css';
-import FacebookLoginComponent from '../components/oldsalehversion';
-//import connectFacebook from '../components/salehfbloginfrontend'
+import React from "react";
+import "../css/login.css";
+import { fetchData } from "../components/oldsalehversion";
+
 export const Login = () => {
-  const facebookcon = FacebookLoginComponent();
-  
   return (
     <div className="login-page">
       <img
@@ -22,8 +20,9 @@ export const Login = () => {
       </div>
       <div className="next-wrapper">
         <div className="next">
-
-          <button className="text-wrapper" onClick={() => facebookcon()} >Sign in with Instagram </button>
+          <button className="text-wrapper" onClick={() => fetchData()}>
+            Sign in with Instagram{" "}
+          </button>
           <img
             className="eva-arrow-ios"
             alt="Eva arrow ios"

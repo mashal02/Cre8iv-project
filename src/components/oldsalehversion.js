@@ -1,90 +1,47 @@
 // React Component
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-//import { useDialog } from 'your-dialog-library'; // Import your dialog library
-//import { MessagePopupComponent } from 'your-message-popup-library'; // Import your message popup library
-//import SelectPagePopupComponent from 'your-select-page-popup-library'; // Import your select page popup library
 import { fetchfbaccesstoken, fetchfblogin } from '../api/facebooklogin/index'; // Import your API service functions
 
-const FacebookLoginComponent = () => {
-  const [code, setCode] = useState('');
-  const history = useNavigate();
-  const [codeStatus, setCodeStatus] = useState(null);
+export const fetchData = async () => {
+  try {
+    await fetchfblogin({
+      callback: (response) => {
+        const authUrl = response.data.url;
 
-  const fetchData = async () => {
-    try {
-      const response = await fetchfblogin({
-        callback: (mainDataObj) => {
-          console.log('Data from backend:', mainDataObj);
+        // Open the URL in a new tab
+        window.open(authUrl, "_blank");
+      },
+    });
+  } catch (error) {
+    showError(error);
+  }
 
-          // Access authUrl from data (assuming the backend sends it in the response)
-          const authUrl = mainDataObj.data.url;
-          console.log('Authentication URL:', authUrl);
+  console.log("Hello is this Function Ended Here??");
+};
 
-          const codeStatus = mainDataObj.status;
-          setCodeStatus(codeStatus);
-          console.log('Code Status:', codeStatus);
+export const processFbLogin = async (code) => {
+  try {
+    await fetchfbaccesstoken(code, (response) => {
+      console.log("Fb access token api response:", response.data);
+    });
+  } catch (error) {
+    showError(error);
+  }
+};
 
-          // Open the URL in a new tab
-          window.open(authUrl, '_blank');
+const showError = (message) => {
+  // Implement your error handling logic (e.g., show an error message)
+  console.error("Error:", message);
+};
 
-          // Your logic with the authUrl goes here
-        },
-      });
-    } catch (error) {
-      console.error('Error fetching data from backend:', error);
-    }
 
-    console.log('Hello is this Function Ended Here??');
-  };
 
-  // useEffect(() => {
-  //   // Call the fetchData function when the component mounts
-  //   fetchData();
-  // }, []); // Empty dependencies array means it runs once after the initial render
 
-  const showError = (message) => {
-    // Implement your error handling logic (e.g., show an error message)
-    console.error('Error:', message);
-  };
 
-  const processFbLogin = async (code) => {
-    try {
-      const response = await fetchfbaccesstoken(
-        (fbRes1) => {
-          console.log('Response:', response);
-        },
-        { code }
-      );
-    } catch (error) {
-      showError(error);
-    }
-  };
 
-  const connectFacebook = async () => {
-    try {
-      // Call fetchData when connecting Facebook
-      await fetchData();
-      //await processFbLogin();
 
-      // flow theek krna
-      //Status Wali Cheez Dekhni hai Humnay
-      //Also Check Await & Async
-      //UseEffect wali Hook ko Explore Krna hai
 
-      // if (codeStatus == '200') {
-      //   console.log('Hello are you Here in this IF Statement ');
-      //   await processFbLogin();
-      // } else {
-      //   console.log('Hello are you Here in this ELSE Statement');
-      // }
-      //localStorage.setItem('seletedAlertId', alert._id);
-      // window.location.href = response.url;
-    } catch (error) {
-      showError(error);
-    }
-  };
+
 
   //const resp = await getFbToken(code);
 
@@ -137,8 +94,4 @@ const FacebookLoginComponent = () => {
   // };
 
   // You can define the missing utility functions (e.g., disconnectSocialAccount, addFbPageDetailsToAlert) here.
-  return connectFacebook;
-};
 
-//export default FacebookLoginComponent;
-export default { FacebookLoginComponent, processFbLogin };

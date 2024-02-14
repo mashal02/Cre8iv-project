@@ -1,5 +1,4 @@
 import React from "react";
-import Login from "./login"
 import { useEffect } from "react";
 import { BrandFacebook1 } from "../resources/icons/BrandFacebook1";
 import { BrandInstagram1 } from "../resources/icons/BrandInstagram1";
@@ -9,40 +8,22 @@ import { BrandTwitter1 } from "../resources/icons/BrandTwitter1";
 import { BrandYoutube1 } from "../resources/icons/BrandYoutube1";
 import { IconlyLightSend } from "../resources/icons/IconlyLightSend";
 import "../css/home.css";
-import { useNavigate } from "react-router-dom";
-import { useParams } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 //import {Landpage} from "../components/landpage"
-import {processFbLogin} from "../components/oldsalehversion"
+import { processFbLogin } from "../components/oldsalehversion";
 
 export const Home = () => {
-  //const params = useParams();
-  //const productId = params.code;
   const search = useLocation().search;
-  const code = new URLSearchParams(search).get('code');
+  const code = new URLSearchParams(search).get("code");
 
-  function codevalue(code) {
-    console.log(code);
-  }
   useEffect(() => {
-    console.log("Inside Home", [])
-    codevalue(code);
-   
-    
-  },[]);
-
-  processFbLogin(code);
-  
- 
-
-  //return <div><h1>Cart Screen</h1> 
-  // <p>Product: {productId}, Qty: { qty}</p></div>;
- 
+    if (code) {
+      processFbLogin(code);
+    }
+  }, []);
 
   return (
-    
     <div className="index">
-    
       <div className="div">
         <div className="overlap">
           <div className="desktop">
@@ -68,7 +49,9 @@ export const Home = () => {
                       <div className="div-w-fit-margin">
                         <div className="div-w-fit">
                           <div className="link">
-                            <div className="text-wrapper">Generate your First Post!</div>
+                            <div className="text-wrapper">
+                              Generate your First Post!
+                            </div>
                           </div>
                           <div className="div-3" />
                         </div>
@@ -87,13 +70,17 @@ export const Home = () => {
                   <div className="div-m-auto">
                     <div className="revolutionize-your-wrapper">
                       <p className="revolutionize-your">
-                        <span className="span">Revolutionize Your Social Media with</span>
+                        <span className="span">
+                          Revolutionize Your Social Media with
+                        </span>
                         <span className="text-wrapper-2">&nbsp;</span>
                         <span className="text-wrapper-3">Cre8iv</span>
                       </p>
                     </div>
                   </div>
-                  <p className="heading-AI">Where Social Meets Potential, Beats Become Success</p>
+                  <p className="heading-AI">
+                    Where Social Meets Potential, Beats Become Success
+                  </p>
                 </div>
               </div>
             </div>
@@ -137,7 +124,9 @@ export const Home = () => {
                       <div className="item-margin">
                         <div className="link-wrapper">
                           <div className="login-wrapper">
-                            <div className="login" ><a href= '/login'>Login </a> </div>
+                            <div className="login">
+                              <a href="/login">Login </a>{" "}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -209,7 +198,8 @@ export const Home = () => {
                     </div>
                     <p className="stay-organized-save">
                       <span className="text-wrapper-7">
-                        Stay organized, save time, and easily manage your Instagram with the features of{" "}
+                        Stay organized, save time, and easily manage your
+                        Instagram with the features of{" "}
                       </span>
                       <span className="text-wrapper-8">cre8iv</span>
                     </p>
@@ -219,7 +209,10 @@ export const Home = () => {
                       </div>
                     </div>
                     <div className="overlap-6">
-                      <p className="p">Discover trends and insights about your brand—and your competitors.</p>
+                      <p className="p">
+                        Discover trends and insights about your brand—and your
+                        competitors.
+                      </p>
                       <div className="text-wrapper-9">Social Listening</div>
                       <img
                         className="dashboard"
@@ -242,7 +235,10 @@ export const Home = () => {
                       <div className="text-wrapper-12">Visitor</div>
                       <div className="text-wrapper-13">+13.03%</div>
                       <div className="placeholder">
-                        <IconlyLightSend className="iconly-light-send" color="#F5F5F5" />
+                        <IconlyLightSend
+                          className="iconly-light-send"
+                          color="#F5F5F5"
+                        />
                       </div>
                       <img
                         className="trending-up-outline"
@@ -253,7 +249,10 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="copyright">
-                  <p className="type">Copyright © 2019-2021 Wedding Planning Assistant LLC, All rights reserved.</p>
+                  <p className="type">
+                    Copyright © 2019-2021 Wedding Planning Assistant LLC, All
+                    rights reserved.
+                  </p>
                 </div>
                 <div className="point-right">
                   <img
@@ -277,7 +276,9 @@ export const Home = () => {
               <div className="div-sc">
                 <div className="div-2">
                   <div className="div-sc-efabb">
-                    <p className="heading-manage">Manage Social Media In One Place</p>
+                    <p className="heading-manage">
+                      Manage Social Media In One Place
+                    </p>
                   </div>
                 </div>
               </div>
@@ -288,7 +289,9 @@ export const Home = () => {
                       <div className="div-sc-aeaae">
                         <div className="div-sc-ce">
                           <button className="button-2">
-                            <div className="text-wrapper-14">Elevate Your Content</div>
+                            <div className="text-wrapper-14">
+                              Elevate Your Content
+                            </div>
                             <img
                               className="SVG"
                               alt="Svg"
@@ -298,15 +301,19 @@ export const Home = () => {
                           <div className="p-wrapper">
                             <div className="analyzes-your-wrapper">
                               <p className="analyzes-your">
-                                Analyzes your visuals and generates captivating, on-brand captions that engage your
-                                audience, saving you time and boosting your content&#39;s impact.
+                                Analyzes your visuals and generates captivating,
+                                on-brand captions that engage your audience,
+                                saving you time and boosting your content&#39;s
+                                impact.
                               </p>
                             </div>
                           </div>
                         </div>
                         <div className="button-wrapper">
                           <button className="button-3">
-                            <div className="text-wrapper-15">Unleash Your Imagination</div>
+                            <div className="text-wrapper-15">
+                              Unleash Your Imagination
+                            </div>
                             <img
                               className="SVG"
                               alt="Svg"
@@ -316,7 +323,9 @@ export const Home = () => {
                         </div>
                         <div className="div-sc-4">
                           <button className="button-4">
-                            <div className="text-wrapper-16">Effortless Scheduling</div>
+                            <div className="text-wrapper-16">
+                              Effortless Scheduling
+                            </div>
                             <img
                               className="SVG"
                               alt="Svg"
@@ -326,7 +335,9 @@ export const Home = () => {
                         </div>
                         <div className="div-sc-5">
                           <button className="button-5">
-                            <div className="text-wrapper-17">One-Click Sharing</div>
+                            <div className="text-wrapper-17">
+                              One-Click Sharing
+                            </div>
                             <img
                               className="SVG"
                               alt="Svg"
@@ -338,7 +349,9 @@ export const Home = () => {
                     </div>
                     <div className="span-sc">
                       <div className="link-5">
-                        <div className="text-wrapper-18">Explore All Features</div>
+                        <div className="text-wrapper-18">
+                          Explore All Features
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -429,16 +442,24 @@ export const Home = () => {
                       <div className="text-wrapper-19">Product</div>
                       <div className="list-4">
                         <div className="item-link-8">
-                          <div className="text-wrapper-20">Publish and schedule</div>
+                          <div className="text-wrapper-20">
+                            Publish and schedule
+                          </div>
                         </div>
                         <div className="item-link-9">
-                          <div className="text-wrapper-20">Engage customers</div>
+                          <div className="text-wrapper-20">
+                            Engage customers
+                          </div>
                         </div>
                         <div className="item-link-10">
-                          <div className="text-wrapper-20">Monitor activity</div>
+                          <div className="text-wrapper-20">
+                            Monitor activity
+                          </div>
                         </div>
                         <div className="item-link-11">
-                          <div className="text-wrapper-20">Advertise content</div>
+                          <div className="text-wrapper-20">
+                            Advertise content
+                          </div>
                         </div>
                         <div className="item-link-12">
                           <div className="text-wrapper-20">Analyze results</div>
@@ -469,7 +490,9 @@ export const Home = () => {
                           <div className="text-wrapper-20">Social selling</div>
                         </div>
                         <div className="item-link-18">
-                          <div className="text-wrapper-20">Employee advocacy</div>
+                          <div className="text-wrapper-20">
+                            Employee advocacy
+                          </div>
                         </div>
                         <div className="social-media-wrapper">
                           <div className="text-wrapper-21">
@@ -492,7 +515,9 @@ export const Home = () => {
                           <div className="text-wrapper-20">Health care</div>
                         </div>
                         <div className="item-link-21">
-                          <div className="text-wrapper-20">Financial services</div>
+                          <div className="text-wrapper-20">
+                            Financial services
+                          </div>
                         </div>
                         <div className="item-link-22">
                           <div className="text-wrapper-20">Education</div>
@@ -504,7 +529,9 @@ export const Home = () => {
                           <div className="text-wrapper-20">Legal</div>
                         </div>
                         <div className="item-link-25">
-                          <div className="text-wrapper-20">Professional Services</div>
+                          <div className="text-wrapper-20">
+                            Professional Services
+                          </div>
                         </div>
                         <div className="item-link-26">
                           <div className="text-wrapper-20">Agencies</div>
@@ -529,7 +556,9 @@ export const Home = () => {
                           <div className="text-wrapper-20">Blog</div>
                         </div>
                         <div className="item-link-30">
-                          <div className="text-wrapper-20">Resource library</div>
+                          <div className="text-wrapper-20">
+                            Resource library
+                          </div>
                         </div>
                         <div className="item-link-29">
                           <div className="text-wrapper-20">Webinars</div>
@@ -544,7 +573,9 @@ export const Home = () => {
                           <div className="text-wrapper-20">Events</div>
                         </div>
                         <div className="item-link-33">
-                          <div className="text-wrapper-20">Become a Partner</div>
+                          <div className="text-wrapper-20">
+                            Become a Partner
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -574,7 +605,9 @@ export const Home = () => {
                 <div className="div-sc-12">
                   <div className="div-sc-13">
                     <div className="p-sc">
-                      <p className="text-wrapper-22">©  2023 Hootsuite Inc. All Rights Reserved.</p>
+                      <p className="text-wrapper-22">
+                        ©  2023 Hootsuite Inc. All Rights Reserved.
+                      </p>
                     </div>
                     <div className="div-4">
                       <div className="button-6">
@@ -676,7 +709,9 @@ export const Home = () => {
                     <div className="text-wrapper-25">Product</div>
                     <div className="list-4">
                       <div className="item-link-8">
-                        <div className="text-wrapper-20">Publish and schedule</div>
+                        <div className="text-wrapper-20">
+                          Publish and schedule
+                        </div>
                       </div>
                       <div className="item-link-9">
                         <div className="text-wrapper-20">Engage customers</div>
