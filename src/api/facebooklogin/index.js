@@ -9,10 +9,10 @@ export const fetchfblogin = ({ callback }) =>
     callback,
   });
 
-  export const fetchfbaccesstoken = (code, callback) =>
+export const fetchfbaccesstoken = (code, callback) =>
   apiWrapper({
     endpoint: `fbtoken?code=${code}`,
-    method: "get",
+    method: 'get',
     callback,
   });
 
