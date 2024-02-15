@@ -21,12 +21,8 @@ export const fetchData = async () => {
 
 export const processFbLogin = async (code) => {
   try {
-    console.log('Code: ', code);
-    await fetchfbaccesstoken(code, {
-      callback: (response) => {
-        console.log('Response from backend: ', response);
-        console.log('Fb access token api response:', response.data);
-      },
+    await fetchfbaccesstoken(code, (response) => {
+      console.log('Fb access token api response:', response.data);
     });
   } catch (error) {
     showError(error);
