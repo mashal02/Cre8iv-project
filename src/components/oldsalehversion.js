@@ -34,7 +34,7 @@ const showError = (message) => {
   console.error('Error:', message);
 };
 
-const processFbpages = async (accesstoken) => {
+export const processFbpages = async (accesstoken) => {
   try {
     const fbPages = await fetchfbpages(accesstoken,(response)=>{
               console.log('Data from backend:',fbPages);
