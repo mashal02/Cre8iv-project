@@ -1,22 +1,23 @@
 import './css/App.css';
-//import Home from './components/home';
-//import Features from './components/features';
-//import Login from './components/login';
+import Home from './pages/home';
+//import FacebookLoginComponent from './pages/login';
+import Login from './pages/login';
+
+import Features from './pages/features';
 //import Signup from './components/signup';
 //import UploadImg from './components/uploadImg';
 //import ImageUpload from './components/messagesent';
-//import Login from './components/login2';
-//import Callback from './components/callback';
-//import FBLogin from './components/facebooklogin';
-import FacebookLoginComponent from './pages/login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
+
+
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/login" exact element={<FacebookLoginComponent />} />
+        <Route path="/login" exact element={<Login/>} />
+        <Route path="/features" exact element={<Features />} />
+
       </Routes>
     </Router>
   );

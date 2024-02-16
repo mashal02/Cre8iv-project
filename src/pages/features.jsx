@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/features.css';
 
-export default function Features() {
+export const Features= () => {
   return (
     <div className="features-final">
       <div className="frame">
@@ -174,3 +174,5 @@ export default function Features() {
     </div>
   );
 }
+
+export default Features;

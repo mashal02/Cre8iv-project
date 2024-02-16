@@ -11,6 +11,7 @@ import "../css/home.css";
 import { useLocation } from "react-router-dom";
 //import {Landpage} from "../components/landpage"
 import { processFbLogin } from "../components/oldsalehversion";
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
   const search = useLocation().search;
@@ -48,11 +49,15 @@ export const Home = () => {
                       </div>
                       <div className="div-w-fit-margin">
                         <div className="div-w-fit">
-                          <div className="link">
+                        
+                        <Link to = "/features" className="link">                    
+                          <div>
                             <div className="text-wrapper">
-                              Generate your First Post!
+                            Generate your First Post!
                             </div>
                           </div>
+                        </Link>
+
                           <div className="div-3" />
                         </div>
                       </div>
