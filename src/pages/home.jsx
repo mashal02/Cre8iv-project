@@ -10,7 +10,7 @@ import { IconlyLightSend } from "../resources/icons/IconlyLightSend";
 import "../css/home.css";
 import { useLocation } from "react-router-dom";
 //import {Landpage} from "../components/landpage"
-import { processFbLogin,processFbpages } from "../components/oldsalehversion";
+import { processFbLogin} from "../components/fblogin";
 import { Link } from 'react-router-dom';
 
 export const Home = () => {
@@ -19,8 +19,9 @@ export const Home = () => {
 
   useEffect(() => {
     if (code) {
-      const accesstoken = processFbLogin(code);
+      processFbLogin(code);
     }
+    
   }, []);
 
   return (
@@ -89,12 +90,13 @@ export const Home = () => {
                 </div>
               </div>
             </div>
+           
             <div className="div-w-fit-2">
+            
               <div className="div-wrapper">
+                
                 <div className="text-wrapper">Generate your First Post!</div>
-                <button className="text-wrapper" onClick={() => processFbpages(accesstoken)}>
-            Get Fb Pages Data{" "}
-          </button>
+                
               </div>
               <div className="div-3" />
             </div>

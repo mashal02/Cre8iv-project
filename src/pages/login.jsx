@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/login.css";
-import { fetchData } from "../components/oldsalehversion";
+import { fetchData } from "../components/fblogin";
 
 export const Login = () => {
   return (
