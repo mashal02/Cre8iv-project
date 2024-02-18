@@ -41,14 +41,14 @@ export const processFbLogin = async (code) => {
 
     //const fbPages = await getUserFbPages(resp.data.access_token);
     //console.log('fbpages: ', fbPages);
-    if (!fbPages.data.data || !fbPages.data.data || !fbPages.data.data.length) {
+    /* if (!fbPages.data.data || !fbPages.data.data || !fbPages.data.data.length) {
       showError('No Facebook page found.');
       return;
-    }
+    } */
 
     await fetchfbpagesdata({
       callback: (response) => {
-        console.log('Data from backend:', response);
+        console.log('Pages Data from backend:', response);
       },
     });
 
