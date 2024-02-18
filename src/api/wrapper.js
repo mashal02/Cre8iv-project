@@ -27,15 +27,17 @@ export const apiWrapper = async ({
   try {
     //const url = `https://192.168.1.28:3001/${endpoint}`;
     //const url = `https://192.168.56.1:3001/${endpoint}`;
-
-    //const url = `https://localhost:3001/${endpoint}`;
-    const url = `https://10.7.116.14:3001/${endpoint}`
+    const url = `https://localhost:3001/${endpoint}`;
+    //const url = `https://10.7.116.14:3001/${endpoint}`;
 
     console.log(url);
     const response = await axios({
       method,
       url,
+      //postData["accesstoken"] : token,
+      //postData: { ...postData, accesstoken: token },
       data: postData,
+      //postData.accesstoken = token
       params: queryParams,
       headers: {
         'Content-Type': 'application/json',

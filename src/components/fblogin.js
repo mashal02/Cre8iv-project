@@ -4,6 +4,7 @@ import {
   fetchfbaccesstoken,
   fetchfblogin,
   fetchfbpages,
+  fetchfbpagesdata,
 } from '../api/facebooklogin/index'; // Import your API service functions
 
 export const fetchData = async () => {
@@ -27,32 +28,39 @@ export const processFbLogin = async (code) => {
   try {
     let accesstoken;
     await fetchfbaccesstoken(code, (response) => {
-      console.log('Fb access token api response:', response.data);
-      accesstoken = response.data;
-      console.log('Accesstoken 1: ', accesstoken);
+      //console.log('Fb access token api response:', response.data);
+      //accesstoken = response.data;
+      //console.log('Accesstoken 1: ', accesstoken);
     });
 
-    console.log('Accesstoken 2: ', accesstoken);
-    const fbPages = await fetchfbpages({accessToken:accesstoken, callback:(response) => {
-      console.log('Data from backend:', response);
-    }});
+    const fbPages = await fetchfbpages({
+      callback: (response) => {
+        console.log('Data from backend:', response.data.data);
+      },
+    });
 
     //const fbPages = await getUserFbPages(resp.data.access_token);
-
-    if (!fbPages || !fbPages.data || !fbPages.data.length) {
+    //console.log('fbpages: ', fbPages);
+    if (!fbPages.data.data || !fbPages.data.data || !fbPages.data.data.length) {
       showError('No Facebook page found.');
       return;
     }
 
-    const pageObj = await dialog.open(SelectPagePopupComponent, {
-      width: '600px',
-      data: fbPages.data,
+    await fetchfbpagesdata({
+      callback: (response) => {
+        console.log('Data from backend:', response);
+      },
     });
 
-    if (!pageObj) {
-      showError('Connect to Facebook failed.');
-      return;
-    }
+    // const pageObj = await dialog.open(SelectPagePopupComponent, {
+    //   width: '600px',
+    //   data: fbPages.data,
+    // });
+
+    // if (!pageObj) {
+    //   showError('Connect to Facebook failed.');
+    //   return;
+    // }
 
     /*     const actId = pageObj.actId;
     const alertUpdated = await addFbPageDetailsToAlert({
@@ -65,13 +73,13 @@ export const processFbLogin = async (code) => {
       accountId: actId,
     });
  */
-    await dialog.open(MessagePopupComponent, {
-      width: '600px',
-      data: `Your Facebook page "${pageObj.name}" has been connected.`,
-    });
+    // await dialog.open(MessagePopupComponent, {
+    //   width: '600px',
+    //   data: `Your Facebook page "${pageObj.name}" has been connected.`,
+    // });
 
     //localStorage.removeItem('seletedAlertId');
-    history.push('/');
+    //history.push('/');
   } catch (error) {
     showError(error);
   }
