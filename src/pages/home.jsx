@@ -14,6 +14,7 @@ import { processFbLogin} from "../components/fblogin";
 import { Link } from 'react-router-dom';
 
 export const Home = () => {
+
   const search = useLocation().search;
   const code = new URLSearchParams(search).get("code");
 
@@ -49,16 +50,12 @@ export const Home = () => {
                         </div>
                       </div>
                       <div className="div-w-fit-margin">
-                        <div className="div-w-fit">
-                        
-                        <Link to = "/features" className="link">                    
+                        <div className="div-w-fit">               
                           <div>
                             <div className="text-wrapper">
                             Generate your First Post!
                             </div>
                           </div>
-                        </Link>
-
                           <div className="div-3" />
                         </div>
                       </div>
@@ -91,12 +88,11 @@ export const Home = () => {
               </div>
             </div>
            
-            <div className="div-w-fit-2">
-            
+            <div className="div-w-fit-2">            
               <div className="div-wrapper">
-                
+              <Link style={{textDecoration: 'none'}} to = "/features" > 
                 <div className="text-wrapper">Generate your First Post!</div>
-                
+              </Link>                
               </div>
               <div className="div-3" />
             </div>

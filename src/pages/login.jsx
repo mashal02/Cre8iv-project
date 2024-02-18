@@ -3,6 +3,12 @@ import "../css/login.css";
 import { fetchData } from "../components/fblogin";
 
 export const Login = () => {
+
+  const handleClick = () => {
+    fetchData();
+    console.log('Div clicked!');
+  };
+
   return (
     <div className="login-page">
       <img
@@ -19,10 +25,11 @@ export const Login = () => {
         </div>
       </div>
       <div className="next-wrapper">
-        <div className="next">
-          <button className="text-wrapper" onClick={() => fetchData()}>
+      <div onClick={handleClick} style={{ cursor: 'pointer' }} className="next">
+        
+          {/* <button className="text-wrapper" onClick={() => fetchData()}> */}
             Sign in with Instagram{" "}
-          </button>
+          {/* </button> */}
           <img
             className="eva-arrow-ios"
             alt="Eva arrow ios"
