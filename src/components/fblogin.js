@@ -33,9 +33,9 @@ export const processFbLogin = async (code) => {
     });
 
     console.log('Accesstoken 2: ', accesstoken);
-    const fbPages = await fetchfbpages(accesstoken, () => {
-      console.log('Data from backend:', fbPages);
-    });
+    const fbPages = await fetchfbpages({accessToken:accesstoken, callback:(response) => {
+      console.log('Data from backend:', response);
+    }});
 
     //const fbPages = await getUserFbPages(resp.data.access_token);
 

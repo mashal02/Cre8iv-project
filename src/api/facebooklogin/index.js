@@ -16,12 +16,21 @@ export const fetchfbaccesstoken = (code, callback) =>
     callback,
   });
 
-export const fetchfbpages = ({ accesstoken,callback }) =>
+export const fetchfbpages = ({accessToken,callback}) =>
   apiWrapper({
-    endpoint: `fbpages?accesstoken=${accesstoken}`,
+    //data: accesstoken,
+    //key: accesstoken,
+    endpoint: `fbpages`,
     method: 'get',
     callback,
-  });
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+/*     postData: {
+      user_access_token: accessToken,
+    },
+ */    
+});
 
 /* const getFacebookLoginUrl = async () => {
     try {
