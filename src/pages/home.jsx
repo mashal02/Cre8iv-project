@@ -17,12 +17,12 @@ export const Home = () => {
   const search = useLocation().search;
   const code = new URLSearchParams(search).get("code");
 
-  useEffect(() => {
+  //useEffect(() => {
     if (code) {
       processFbLogin(code);
     }
     
-  }, []);
+  //}, []);
 
   return (
     <div className="index">
