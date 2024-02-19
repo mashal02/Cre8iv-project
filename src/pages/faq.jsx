@@ -1,3 +1,7 @@
+//import "../css/bootstrap.min.css"
+import Navbar from "./navbar"
+import "../css/faqstyle.css"
+import Footer from './footer'
 export const FAQ = () => {
   return (
 <>
@@ -10,14 +14,8 @@ export const FAQ = () => {
   />
   <meta name="generator" content="Hugo 0.88.1" />
   <title>Campus Cravings | Home</title>
-  <link
-    rel="canonical"
-    href="https://getbootstrap.com/docs/5.1/examples/carousel/"
-  />
-  {/*Favicon*/}
-  <link rel="icon" type="image/png" href="restaurant.png" />
+ 
   {/* Bootstrap core CSS */}
-  <link href="css1/bootstrap.min.css" rel="stylesheet" />
   <style
     dangerouslySetInnerHTML={{
       __html:
@@ -25,7 +23,6 @@ export const FAQ = () => {
     }}
   />
   {/* Custom styles for this template */}
-  <link href="css/faqstyle.css" rel="stylesheet" />
   {/*svg's*/}
   <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
     <symbol id="home" viewBox="0 0 16 16">
@@ -66,105 +63,25 @@ export const FAQ = () => {
   </svg>
   <main>
     {/*header*/}
-    <header className="p-3 bg-dark text-white">
-      <div className="container">
-        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a
-            href="/"
-            className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-          >
-            <svg
-              className="bi me-2"
-              width={40}
-              height={32}
-              role="img"
-              aria-label="Bootstrap"
-            >
-              <use xlinkHref="#bootstrap" />
-            </svg>
-          </a>
-          <h4>Campus Cravings</h4>
-          {/*Navigation*/}
-          <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li>
-              <a href="#" className="nav-link px-2 text-secondary">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link px-2 text-white">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link px-2 text-white">
-                Cafe's
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link px-2 text-white">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-            <input
-              type="search"
-              className="form-control form-control-dark"
-              placeholder="Search..."
-              aria-label="Search"
-            />
-          </form>
-          {/*Buttons*/}
-          <div className="text-end">
-            <button
-              type="button"
-              className="btn btn-outline-light me-2 loginbtn"
-            >
-              <a href="{{ route('login') }}">Login</a>
-            </button>
-            <button type="button" className="btn btn-warning subtn">
-              <a href="{{ route('register') }}">Sign Up</a>
-            </button>
-            {/*Both link to our sign up/log in page*/}
-          </div>
-        </div>
-      </div>
-    </header>
+     
     <div className="container marketing">
       {/* START THE FEATURETTES */}
       {/*About Us*/}
-      <div className="row featurette">
-        <div className="col-md-7">
-          <h2 className="featurette-heading">About Us</h2>
-          <p className="lead">
-            So what's our story? We aim to serve all NUSTians by providing them{" "}
-            <b>a singular and easy platform</b> for ordering and browsing the
-            menu's of all the cafe's at NUST. Peruse the <b>latest deals</b> and
-            take a look at feedback by your peers to find the best of what
-            you're craving!
-          </p>
-        </div>
-        <div className="col-md-5">
-          <img
-            className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-            width={800}
-            height={500}
-            src="about2.png"
-          />
-        </div>
-      </div>
-      <hr className="featurette-divider" />
+      <Navbar></Navbar>
+      
       {/*FAQ's*/}
       <h2 className="featurette-heading">
         Frequently Asked Questions (FAQ's)
       </h2>{" "}
       <br />
-      <div className="accordion" id="accordionExample">
-        <div className="accordion-item">
+      <div  className="accordion" id="accordionExample">
+        <div style={{
+                backgroundColor: '#f0e9ff' }} className="accordion-item" >
           <h2 className="accordion-header" id="headingOne">
             <button
               className="accordion-button collapsed"
+              style={{
+                backgroundColor: '#f5f5f5' }}
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -193,9 +110,12 @@ export const FAQ = () => {
             </div>
           </div>
         </div>
-        <div className="accordion-item">
+        <div style={{
+                backgroundColor: '#f0e9ff' }}className="accordion-item">
           <h2 className="accordion-header" id="headingTwo">
             <button
+             style={{
+              backgroundColor: '#f5f5f5' }}
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -221,9 +141,12 @@ export const FAQ = () => {
             </div>
           </div>
         </div>
-        <div className="accordion-item">
+        <div style={{
+                backgroundColor: '#f0e9ff' }} className="accordion-item">
           <h2 className="accordion-header" id="headingThree">
             <button
+             style={{
+              backgroundColor: '#f5f5f5' }}
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -256,7 +179,8 @@ export const FAQ = () => {
   {/*Divider before footer*/}
   <div className="b-example-divider" />
   {/*Footer*/}
-  <div className="bottombar">
+  <Footer></Footer>
+  {/* <div className="bottombar">
     <div className="container bottomcontainer">
       <footer className="py-5">
         <div className="row">
@@ -353,7 +277,7 @@ export const FAQ = () => {
           </div>
           <div className="d-flex justify-content-between py-4 my-4 border-top">
             <p>© 2022 Campus Cravings, Inc. All rights reserved.</p>
-            {/*Social media handles*/}
+         
             <ul className="list-unstyled d-flex">
               <li className="ms-3">
                 <a className="link-dark" href="#" title="Visit our Twitter">
@@ -388,7 +312,7 @@ export const FAQ = () => {
         </div>
       </footer>
     </div>
-  </div>
+  </div> */}
 </>
 )
 };

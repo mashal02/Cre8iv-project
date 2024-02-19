@@ -7,12 +7,13 @@ import { BrandMessenger1 } from "../resources/icons/BrandMessenger1";
 import { BrandTwitter1 } from "../resources/icons/BrandTwitter1";
 import { BrandYoutube1 } from "../resources/icons/BrandYoutube1";
 import { IconlyLightSend } from "../resources/icons/IconlyLightSend";
-import "../css/home.css";
+
 import { useLocation } from "react-router-dom";
 //import {Landpage} from "../components/landpage"
 import { processFbLogin} from "../components/fblogin";
 import { Link } from 'react-router-dom';
-
+import Navbar from "./navbar"
+import "../css/home.css";
 export const Home = () => {
 
   const search = useLocation().search;
@@ -96,61 +97,8 @@ export const Home = () => {
               </div>
               <div className="div-3" />
             </div>
-            <div className="overlap-group">
-              <div className="div-container-fluid">
-                <div className="div-navbar-translate">
-                  <div className="link-2" />
-                </div>
-                <div className="div-navigation">
-                  <div className="list-margin">
-                    <div className="list">
-                      <div className="item">
-                        <div className="link-3">
-                          <div className="text-wrapper-4">Use Cases</div>
-                        </div>
-                      </div>
-                      <div className="item">
-                        <div className="link-3">
-                          <div className="text-wrapper-4">Solutions</div>
-                        </div>
-                      </div>
-                      <div className="link-features-wrapper">
-                        <div className="text-wrapper-4">Features</div>
-                      </div>
-                      <div className="link-free-AI-tools-wrapper">
-                        <div className="text-wrapper-4">Free Tools</div>
-                      </div>
-                      <div className="link-pricing-wrapper">
-                        <div className="text-wrapper-4">Pricing</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="list-wrapper">
-                    <div className="list-2">
-                      <div className="item-margin">
-                        <div className="link-wrapper">
-                          <div className="login-wrapper">
-                            <div className="login">
-                              <a href="/login">Login </a>{" "}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="item-2">
-                        <div className="link-4">
-                          <div className="text-wrapper-5">Get Started Now</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img
-                className="light-background"
-                alt="Light background"
-                src="https://cdn.animaapp.com/projects/652b73bd6c9702139298c7a5/releases/65be35262f238b9ee1d020c3/img/light-background-2-2@2x.png"
-              />
-            </div>
+            <Navbar></Navbar>
+           
           </div>
           <div className="frame-wrapper">
             <div className="hero-section-wrapper">
