@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { BrandFacebook1 } from "../resources/icons/BrandFacebook1";
 import { BrandInstagram1 } from "../resources/icons/BrandInstagram1";
@@ -8,23 +8,26 @@ import { BrandTwitter1 } from "../resources/icons/BrandTwitter1";
 import { BrandYoutube1 } from "../resources/icons/BrandYoutube1";
 import { IconlyLightSend } from "../resources/icons/IconlyLightSend";
 
-import { useLocation } from "react-router-dom";
+import { useLocation , useHistory} from "react-router-dom";
 //import {Landpage} from "../components/landpage"
 import { processFbLogin} from "../components/fblogin";
 import { Link } from 'react-router-dom';
 import Navbar from "./navbar"
 import "../css/home.css";
 export const Home = () => {
+  const [hasRedirected, setHasRedirected] = useState(false);
 
   const search = useLocation().search;
   const code = new URLSearchParams(search).get("code");
 
-  //useEffect(() => {
-    if (code) {
+  useEffect(() => {
+    if(!hasRedirected){
+      console.log('this is my useEffect==========');
+      console.log('this is my state==========', hasRedirected);
+      setHasRedirected(true);
       processFbLogin(code);
     }
-    
-  //}, []);
+  }, []);
 
   return (
     <div className="index">

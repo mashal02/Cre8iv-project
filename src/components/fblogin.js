@@ -24,20 +24,24 @@ export const fetchData = async () => {
   //console.log('Hello is this Function Ended Here??');
 };
 
-export const processFbLogin = async (code) => {
+export const processFbLogin = async (code = null) => {
   try {
+    if (!code) {
+      return;
+    }
     let accesstoken;
     await fetchfbaccesstoken(code, (response) => {
+      console.log('this is my response =========', response.data);
       //console.log('Fb access token api response:', response.data);
       //accesstoken = response.data;
       //console.log('Accesstoken 1: ', accesstoken);
     });
 
-    const fbPages = await fetchfbpages({
-      callback: (response) => {
-        console.log('Data from backend:', response.data.data);
-      },
-    });
+    // const fbPages = await fetchfbpages({
+    //   callback: (response) => {
+    //     console.log('Data from backend:', response.data.data);
+    //   },
+    // });
 
     //const fbPages = await getUserFbPages(resp.data.access_token);
     //console.log('fbpages: ', fbPages);
@@ -46,11 +50,11 @@ export const processFbLogin = async (code) => {
       return;
     } */
 
-    await fetchfbpagesdata({
-      callback: (response) => {
-        console.log('Pages Data from backend:', response);
-      },
-    });
+    // await fetchfbpagesdata({
+    //   callback: (response) => {
+    //     console.log('Pages Data from backend:', response);
+    //   },
+    // });
 
     // const pageObj = await dialog.open(SelectPagePopupComponent, {
     //   width: '600px',
