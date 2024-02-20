@@ -8,6 +8,7 @@ import Features from './pages/features';
 //import ImageUpload from './components/messagesent';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { FAQ } from './pages/faq';
+import { PrivacyPolicy } from './pages/privacypolicy';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/login" exact element={<Login />} />
         <Route path="/features" exact element={<Features />} />
         <Route path="/faq" exact element={<FAQ />} />
+        <Route path="/privacypolicy" exact element={<PrivacyPolicy />} />
+
       </Routes>
     </Router>
   );
