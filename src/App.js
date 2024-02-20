@@ -19,7 +19,6 @@ function App() {
         <Route path="/features" exact element={<Features />} />
         <Route path="/faq" exact element={<FAQ />} />
         <Route path="/privacypolicy" exact element={<PrivacyPolicy />} />
-
       </Routes>
     </Router>
   );
