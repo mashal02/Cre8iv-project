@@ -31,7 +31,7 @@ export const processFbLogin = async (code = null) => {
     }
     let accesstoken;
     await fetchfbaccesstoken(code, (response) => {
-      console.log('this is my response =========', response.data);
+      console.log('this is my response =========', response);
       //console.log('Fb access token api response:', response.data);
       //accesstoken = response.data;
       //console.log('Accesstoken 1: ', accesstoken);

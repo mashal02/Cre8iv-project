@@ -20,12 +20,18 @@ export const Home = () => {
   const [hasRedirected, setHasRedirected] = useState(false);
 
   const search = useLocation().search;
-  const code = new URLSearchParams(search).get("code");
+  let code = null;
+
+// Check if 'code' has not been extracted yet
+if (!code) {
+  code = new URLSearchParams(search).get("code");
+}
 
   useEffect(() => {
     if(!hasRedirected){
       console.log('this is my useEffect==========');
       console.log('this is my state==========', hasRedirected);
+      console.log("Code: ", code);
       setHasRedirected(true);
       processFbLogin(code);
     }
