@@ -21,36 +21,29 @@ export const fetchData = async () => {
     showError(error);
   }
 
-  //console.log('Hello is this Function Ended Here??');
 };
 
-export const processFbLogin = async (code = null) => {
+export const processFbLogin = async () => {
   try {
-    if (!code) {
-      return;
-    }
-    let accesstoken;
-    await fetchfbaccesstoken(code, (response) => {
+    
+     /* await fetchfbaccesstoken((response) => {
       console.log('this is my response =========', response);
-      //console.log('Fb access token api response:', response.data);
-      //accesstoken = response.data;
-      //console.log('Accesstoken 1: ', accesstoken);
+      
+    });
+ */
+    const fbPages = await fetchfbpages({
+      callback: (response) => {
+        console.log('Data from backend:', response);
+      },
     });
 
-    // const fbPages = await fetchfbpages({
-    //   callback: (response) => {
-    //     console.log('Data from backend:', response.data.data);
-    //   },
-    // });
-
-    //const fbPages = await getUserFbPages(resp.data.access_token);
-    //console.log('fbpages: ', fbPages);
-    /* if (!fbPages.data.data || !fbPages.data.data || !fbPages.data.data.length) {
+      console.log('fbpages: ', fbPages);
+    if (!fbPages.data.data || !fbPages.data.data || !fbPages.data.data.length) {
       showError('No Facebook page found.');
       return;
-    } */
+    }
 
-    // await fetchfbpagesdata({
+    //  fetchfbpagesdata({
     //   callback: (response) => {
     //     console.log('Pages Data from backend:', response);
     //   },
@@ -66,21 +59,7 @@ export const processFbLogin = async (code = null) => {
     //   return;
     // }
 
-    /*     const actId = pageObj.actId;
-    const alertUpdated = await addFbPageDetailsToAlert({
-      alertId: alertId,
-      userToken: resp.data.access_token,
-      pageId: pageObj.id,
-      pageName: pageObj.name,
-      pageToken: pageObj.access_token,
-      instaDetails: pageObj.instagram_business_account,
-      accountId: actId,
-    });
- */
-    // await dialog.open(MessagePopupComponent, {
-    //   width: '600px',
-    //   data: `Your Facebook page "${pageObj.name}" has been connected.`,
-    // });
+   
 
     //localStorage.removeItem('seletedAlertId');
     //history.push('/');
@@ -100,8 +79,6 @@ const showError = (message) => {
 //       console.log('Data from backend:', fbPages);
 //     });
 
-//     //const fbPages = await getUserFbPages(resp.data.access_token);
-
 //     if (!fbPages || !fbPages.data || !fbPages.data.length) {
 //       showError('No Facebook page found.');
 //       return;
@@ -117,17 +94,8 @@ const showError = (message) => {
 //       return;
 //     }
 
-//     /*     const actId = pageObj.actId;
-//     const alertUpdated = await addFbPageDetailsToAlert({
-//       alertId: alertId,
-//       userToken: resp.data.access_token,
-//       pageId: pageObj.id,
-//       pageName: pageObj.name,
-//       pageToken: pageObj.access_token,
-//       instaDetails: pageObj.instagram_business_account,
-//       accountId: actId,
-//     });
-//  */
+   
+
 //     await dialog.open(MessagePopupComponent, {
 //       width: '600px',
 //       data: `Your Facebook page "${pageObj.name}" has been connected.`,

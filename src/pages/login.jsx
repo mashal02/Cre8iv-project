@@ -1,12 +1,13 @@
 import React from "react";
 import "../css/login.css";
 import { fetchData } from "../components/fblogin";
-
+//import { processFbLogin} from "../components/fblogin";
 export const Login = () => {
 
-  const handleClick = () => {
-    fetchData();
+  const handleClick = async() => {
+    await fetchData();
     console.log('Div clicked!');
+    //processFbLogin();
   };
 
   return (

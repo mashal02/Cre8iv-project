@@ -9,13 +9,18 @@ export const fetchfblogin = ({ callback }) =>
     callback,
   });
 
-export const fetchfbaccesstoken = (code, callback) =>
+// export const fetchfbaccesstoken = (code, callback) =>
+//   apiWrapper({
+//     endpoint: `fbtoken?code=${code}`,
+//     method: 'get',
+//     callback,
+//   });
+ /*  export const fetchfbaccesstoken = ({callback}) =>
   apiWrapper({
-    endpoint: `fbtoken?code=${code}`,
+    endpoint: `fbtoken`,
     method: 'get',
     callback,
-  });
-
+  }); */
 export const fetchfbpages = ({ callback }) =>
   apiWrapper({
     //data: accesstoken,

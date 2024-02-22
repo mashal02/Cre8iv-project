@@ -7,10 +7,10 @@ import { BrandMessenger1 } from "../resources/icons/BrandMessenger1";
 import { BrandTwitter1 } from "../resources/icons/BrandTwitter1";
 import { BrandYoutube1 } from "../resources/icons/BrandYoutube1";
 import { IconlyLightSend } from "../resources/icons/IconlyLightSend";
-
+import { processFbLogin} from "../components/fblogin";
 import { useLocation , useHistory} from "react-router-dom";
 //import {Landpage} from "../components/landpage"
-import { processFbLogin} from "../components/fblogin";
+
 import { Link } from 'react-router-dom';
 import Navbar from "./navbar"
 import Footer from "./footer"
@@ -19,23 +19,25 @@ import "../css/home.css";
 export const Home = () => {
   const [hasRedirected, setHasRedirected] = useState(false);
 
-  const search = useLocation().search;
-  let code = null;
+//   const search = useLocation().search;
+//   let code = null;
 
-// Check if 'code' has not been extracted yet
-if (!code) {
-  code = new URLSearchParams(search).get("code");
-}
+// // Check if 'code' has not been extracted yet
+// if (!code) {
+//   code = new URLSearchParams(search).get("code");
+// }
 
   useEffect(() => {
-    if(!hasRedirected){
-      console.log('this is my useEffect==========');
-      console.log('this is my state==========', hasRedirected);
-      console.log("Code: ", code);
-      setHasRedirected(true);
-      processFbLogin(code);
-    }
+     if(!hasRedirected){
+  //     console.log('this is my useEffect==========');
+  //     console.log('this is my state==========', hasRedirected);
+  //     console.log("Code: ", code);
+       setHasRedirected(true);
+    processFbLogin();
+   }
   }, []);
+    
+ 
 
   return (
     <main>
