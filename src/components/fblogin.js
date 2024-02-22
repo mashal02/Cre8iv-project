@@ -20,13 +20,11 @@ export const fetchData = async () => {
   } catch (error) {
     showError(error);
   }
-
 };
 
 export const processFbLogin = async () => {
   try {
-    
-     /* await fetchfbaccesstoken((response) => {
+    /* await fetchfbaccesstoken((response) => {
       console.log('this is my response =========', response);
       
     });
@@ -37,17 +35,17 @@ export const processFbLogin = async () => {
       },
     });
 
-      console.log('fbpages: ', fbPages);
+    //console.log('fbpages: ', fbPages);
     if (!fbPages.data.data || !fbPages.data.data || !fbPages.data.data.length) {
       showError('No Facebook page found.');
       return;
     }
 
-    //  fetchfbpagesdata({
-    //   callback: (response) => {
-    //     console.log('Pages Data from backend:', response);
-    //   },
-    // });
+    fetchfbpagesdata({
+      callback: (response) => {
+        console.log('Pages Data from backend:', response);
+      },
+    });
 
     // const pageObj = await dialog.open(SelectPagePopupComponent, {
     //   width: '600px',
@@ -58,8 +56,6 @@ export const processFbLogin = async () => {
     //   showError('Connect to Facebook failed.');
     //   return;
     // }
-
-   
 
     //localStorage.removeItem('seletedAlertId');
     //history.push('/');
@@ -93,8 +89,6 @@ const showError = (message) => {
 //       showError('Connect to Facebook failed.');
 //       return;
 //     }
-
-   
 
 //     await dialog.open(MessagePopupComponent, {
 //       width: '600px',
