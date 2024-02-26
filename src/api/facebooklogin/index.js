@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import axios from 'axios';
 import { apiWrapper } from '../../api/wrapper';
 
 export const fetchfblogin = ({ callback }) =>
@@ -15,7 +13,7 @@ export const fetchfblogin = ({ callback }) =>
 //     method: 'get',
 //     callback,
 //   });
- /*  export const fetchfbaccesstoken = ({callback}) =>
+/*  export const fetchfbaccesstoken = ({callback}) =>
   apiWrapper({
     endpoint: `fbtoken`,
     method: 'get',

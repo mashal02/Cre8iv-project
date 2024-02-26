@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+// YourComponent.js
+import React from 'react';
+import { useState } from 'react';
+import { uploadImage } from '../api/imgupload/index';
 
 const ImageUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -13,11 +15,7 @@ const ImageUpload = () => {
       const formData = new FormData();
       formData.append('image', selectedFile);
 
-      await axios.post('https://localhost:3001/uploadimg', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      await uploadImage(formData);
 
       console.log('Image uploaded successfully');
     } catch (error) {
@@ -31,5 +29,6 @@ const ImageUpload = () => {
       <button onClick={handleUpload}>Upload</button>
     </div>
   );
-}
+};
+
 export default ImageUpload;
