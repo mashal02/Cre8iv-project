@@ -5,7 +5,7 @@ import Login from './pages/fblogin';
 import Features from './pages/features';
 //import Signup from './components/signup';
 //import UploadImg from './components/uploadImg';
-import ImageUpload from './components/imgupload';
+import UploadImg from './pages/uploadImg';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { FAQ } from './pages/faq';
 import { PrivacyPolicy } from './pages/privacypolicy';
@@ -19,7 +19,7 @@ function App() {
         <Route path="/features" exact element={<Features />} />
         <Route path="/faq" exact element={<FAQ />} />
         <Route path="/privacypolicy" exact element={<PrivacyPolicy />} />
-        <Route path="/uploadimg" exact element={<ImageUpload />} />
+        <Route path="/uploadimg" exact element={<UploadImg />} />
       </Routes>
     </Router>
   );
