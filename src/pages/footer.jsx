@@ -26,7 +26,7 @@ return (
           </li>
           <li className="nav-item mb-2">
             <a
-              href="{{ route('faq') }}"
+              href="/about"
               className="nav-link p-0 text-muted"
             >
               About
@@ -54,7 +54,7 @@ return (
         <h5>Services</h5>
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
-            <a href="#" className="nav-link p-0 text-muted">
+            <a href="/features" className="nav-link p-0 text-muted">
               Services
             </a>
           </li>
@@ -69,7 +69,7 @@ return (
             </a>
           </li>
           <li className="nav-item mb-2">
-            <a href="#" className="nav-link p-0 text-muted">
+            <a href="/uploadimg" className="nav-link p-0 text-muted">
               Caption Generator            </a>
           </li>
         </ul>
@@ -79,7 +79,7 @@ return (
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
             <a
-              href="{{ route('contact') }}"
+              href="/contactus"
               className="nav-link p-0 text-muted"
             >
               Contact Us
@@ -93,14 +93,10 @@ return (
               FAQ's
             </a>
           </li>
-          <li className="nav-item mb-2">
-            <a href="#" className="nav-link p-0 text-muted">
-              Pricing
-            </a>
-          </li>
+          
           <li className="nav-item mb-2">
             <a
-              href="{{ route('feedback') }}"
+              href="/contactus"
               className="nav-link p-0 text-muted"
             >
               Feedback

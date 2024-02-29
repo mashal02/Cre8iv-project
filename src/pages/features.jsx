@@ -1,16 +1,23 @@
 import React from 'react';
 import '../css/features.css';
-
+import Navbar from "./navbar"
+import Footer from "./footer"
 export const Features= () => {
   return (
+    
     <div className="features-final">
+       <Navbar></Navbar>
       <div className="frame">
+      
         <div className="div">
+       
           <div className="heading">
+          
             <p className="text-wrapper">
               One-Stop Platform For All Your Social Media Needs
             </p>
           </div>
+          
           <div className="link">
             <p className="p">Create Posts with AI for FREE!</p>
           </div>

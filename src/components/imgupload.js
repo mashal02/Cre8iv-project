@@ -50,12 +50,16 @@ const ImageUpload = () => {
         </div>
       </div>
 
-      {selectedFile && (
+
+       
+       
+       {selectedFile && (
         <div
           style={{
             width: '450',
             height: '200px',
             display: 'inline-table',
+           
           }}
         >
           <img
@@ -74,7 +78,7 @@ const ImageUpload = () => {
         {selectedFile && (
           <div className="text-wrapper-3">
             <button onClick={handleUpload} className="frame-7">
-              Upload
+              Generate Caption
             </button>
           </div>
         )}

@@ -20,7 +20,7 @@ export default function UploadImg() {
       </div>
       <div className="frame-wrapper">
         <div className="frame-2">
-          <p className="p">Upload Image to get Caption</p>
+          <p className="p">Caption Generator</p>
           <div className="frame-3">
             <ImageUpload />{' '}
             {/* Replace the "Choose Image" button with ImageUpload component */}

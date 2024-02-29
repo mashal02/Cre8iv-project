@@ -29,7 +29,7 @@ export const Login = () => {
       <div onClick={handleClick} style={{ cursor: 'pointer' }} className="next">
         
           {/* <button className="text-wrapper" onClick={() => fetchData()}> */}
-            Sign in with Instagram{" "}
+            Sign in with Facebook{" "}
           {/* </button> */}
           <img
             className="eva-arrow-ios"
