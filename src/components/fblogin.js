@@ -30,13 +30,7 @@ export const processFbLogin = async () => {
       
     });
  */
-   
-     await fetchfbuserinfo({
-       
-   });
 
-
-   
     const fbPages = await fetchfbpages({
       callback: (response) => {
         console.log('Data from backend:', response);
@@ -49,12 +43,13 @@ export const processFbLogin = async () => {
       return;
     }
 
+    await fetchfbuserinfo({});
+
     fetchfbpagesdata({
       callback: (response) => {
         console.log('Pages Data from backend:', response);
       },
     });
-
   } catch (error) {
     showError(error);
   }
@@ -64,4 +59,3 @@ const showError = (message) => {
   // Implement your error handling logic (e.g., show an error message)
   console.error('Error:', message);
 };
-
