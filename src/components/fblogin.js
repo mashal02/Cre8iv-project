@@ -5,6 +5,7 @@ import {
   fetchfblogin,
   fetchfbpages,
   fetchfbpagesdata,
+  fetchfbuserinfo,
 } from '../api/facebooklogin/index'; // Import your API service functions
 
 export const fetchData = async () => {
@@ -29,6 +30,13 @@ export const processFbLogin = async () => {
       
     });
  */
+   
+     await fetchfbuserinfo({
+       
+   });
+
+
+   
     const fbPages = await fetchfbpages({
       callback: (response) => {
         console.log('Data from backend:', response);
@@ -47,18 +55,6 @@ export const processFbLogin = async () => {
       },
     });
 
-    // const pageObj = await dialog.open(SelectPagePopupComponent, {
-    //   width: '600px',
-    //   data: fbPages.data,
-    // });
-
-    // if (!pageObj) {
-    //   showError('Connect to Facebook failed.');
-    //   return;
-    // }
-
-    //localStorage.removeItem('seletedAlertId');
-    //history.push('/');
   } catch (error) {
     showError(error);
   }
@@ -69,35 +65,3 @@ const showError = (message) => {
   console.error('Error:', message);
 };
 
-// export const processFbpages = async (accesstoken) => {
-//   try {
-//     const fbPages = await fetchfbpages(accesstoken, (response) => {
-//       console.log('Data from backend:', fbPages);
-//     });
-
-//     if (!fbPages || !fbPages.data || !fbPages.data.length) {
-//       showError('No Facebook page found.');
-//       return;
-//     }
-
-//     const pageObj = await dialog.open(SelectPagePopupComponent, {
-//       width: '600px',
-//       data: fbPages.data,
-//     });
-
-//     if (!pageObj) {
-//       showError('Connect to Facebook failed.');
-//       return;
-//     }
-
-//     await dialog.open(MessagePopupComponent, {
-//       width: '600px',
-//       data: `Your Facebook page "${pageObj.name}" has been connected.`,
-//     });
-
-//     //localStorage.removeItem('seletedAlertId');
-//     history.push('/');
-//   } catch (error) {
-//     showError(error.error.message);
-//   }
-// };
