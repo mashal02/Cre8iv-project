@@ -13,39 +13,48 @@ export const fetchfblogin = ({ callback }) =>
 //     method: 'get',
 //     callback,
 //   });
-/*  export const fetchfbaccesstoken = ({callback}) =>
-  apiWrapper({
-    endpoint: `fbtoken`,
-    method: 'get',
-    callback,
-  }); */
-export const fetchfbpages = ({ callback }) =>
-  apiWrapper({
-    //data: accesstoken,
-    //key: accesstoken,
-    endpoint: `fbpages`,
-    method: 'get',
-    callback,
-    //postData[accesstoken] = token,
-    // headers: {
-    //   Authorization: `Bearer ${accessToken}`,
-    // },
-    /*     postData: {
-      user_access_token: accessToken,
-    },
- */
-  });
 
-export const fetchfbpagesdata = ({ callback }) =>
+export const fetchfbaccesstoken = ({ callback }) =>
   apiWrapper({
-    endpoint: `fbpagesdata`,
+    endpoint: `fbtoken?code=${code}`,
     method: 'get',
     callback,
   });
 
-  export const fetchfbuserinfo = ({ callback }) =>
+// export const fetchfbpages = ({ callback }) =>
+//   apiWrapper({
+//     //data: accesstoken,
+//     //key: accesstoken,
+//     endpoint: `fbpages`,
+//     method: 'get',
+//     callback,
+//     //postData[accesstoken] = token,
+//     // headers: {
+//     //   Authorization: `Bearer ${accessToken}`,
+//     // },
+//     /*     postData: {
+//       user_access_token: accessToken,
+//     },
+//  */
+//   });
+
+// export const fetchfbpagesdata = ({ callback }) =>
+//   apiWrapper({
+//     endpoint: `fbpagesdata`,
+//     method: 'get',
+//     callback,
+//   });
+
+//   export const fetchfbuserinfo = ({ callback }) =>
+//   apiWrapper({
+//     endpoint: `fbuserinfo`,
+//     method: 'get',
+//     callback,
+//   });
+
+export const mainCall = (callback) =>
   apiWrapper({
-    endpoint: `fbuserinfo`,
+    endpoint: `caller`,
     method: 'get',
     callback,
   });

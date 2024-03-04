@@ -6,6 +6,7 @@ import {
   fetchfbpages,
   fetchfbpagesdata,
   fetchfbuserinfo,
+  mainCall,
 } from '../api/facebooklogin/index'; // Import your API service functions
 
 export const fetchData = async () => {
@@ -31,25 +32,27 @@ export const processFbLogin = async () => {
     });
  */
 
-    const fbPages = await fetchfbpages({
-      callback: (response) => {
-        console.log('Data from backend:', response);
-      },
-    });
+    await mainCall();
 
-    //console.log('fbpages: ', fbPages);
-    if (!fbPages.data.data || !fbPages.data.data || !fbPages.data.data.length) {
-      showError('No Facebook page found.');
-      return;
-    }
+    // const fbPages = await fetchfbpages({
+    //   callback: (response) => {
+    //     console.log('Data from backend:', response);
+    //   },
+    // });
 
-    await fetchfbuserinfo({});
+    // //console.log('fbpages: ', fbPages);
+    // if (!fbPages.data.data || !fbPages.data.data || !fbPages.data.data.length) {
+    //   showError('No Facebook page found.');
+    //   return;
+    // }
 
-    fetchfbpagesdata({
-      callback: (response) => {
-        console.log('Pages Data from backend:', response);
-      },
-    });
+    // await fetchfbuserinfo({});
+
+    // fetchfbpagesdata({
+    //   callback: (response) => {
+    //     console.log('Pages Data from backend:', response);
+    //   },
+    // });
   } catch (error) {
     showError(error);
   }
